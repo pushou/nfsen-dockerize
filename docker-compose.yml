@@ -1,0 +1,38 @@
+# docker volume create --name nfsenDataVolume
+nfsen:
+    #build: .
+    image: registry.iutbeziers.fr/nfsen:latest
+    restart: always
+    hostname: nfsen
+    #privileged: true
+    # Ajoute les ports d'entrée des flux des sondes netflow
+    ports:
+    - 6080:80
+    # IPFIX
+    - 4739:4379
+    # sFlow
+    - 6343:6343
+    # Netflow 
+    - 1555:1555/udp
+    - 1556:1556/udp
+    - 1557:1557/udp
+    - 1558:1558/udp
+    - 1559:1559/udp
+    - 1560:1560/udp
+    - 1561:1561/udp
+    - 1562:1562/udp
+    - 1563:1563/udp
+    - 1564:1564/udp
+    - 1565:1565/udp
+    - 1566:1566/udp
+    - 1567:1567/udp
+    - 1568:1568/udp
+    - 1569:1569/udp
+    - 1570:1570/udp
+    - 1571:1571/udp
+    - 1572:1572/udp
+    - 1573:1573/udp
+    - 1574:1574/udp
+    - 1575:1575/udp
+    volumes:
+      - "nfsenDataVolume:/data"
